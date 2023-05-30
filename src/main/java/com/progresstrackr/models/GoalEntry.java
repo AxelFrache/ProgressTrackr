@@ -1,5 +1,6 @@
 package com.progresstrackr.models;
 
+import java.time.LocalDate;
 import java.util.UUID;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,29 +9,24 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.persistence.Column;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.JoinColumn;
-import java.util.List;
 
 @Entity
-@Table(name = "goal")
-public class Goal {
+@Table(name = "goal_entry")
+public class GoalEntry {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "goal_id")
-    private UUID goalId;
+    @Column(name = "goalEntryId")
+    private UUID goalEntryId;
 
-    @Column(name = "goal_title")
-    private String goalTitle;
+    @Column(name = "goalEntryDate")
+    private LocalDate goalEntryDate;
 
-    @Column(name = "goal_description")
-    private String goalDescription;
+    @Column(name = "goalEntryStatus")
+    private boolean goalEntryStatus;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "goalId")
+    private Goal goal;
 
-    @OneToMany(mappedBy = "goal")
-    private List<GoalEntry> goalEntries;
 }
-

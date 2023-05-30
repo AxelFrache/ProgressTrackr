@@ -13,3 +13,6 @@ With Spring Boot at its core, the project benefits from features like auto-confi
 Thymeleaf is a powerful and flexible server-side Java template engine that seamlessly integrates with Spring Boot. 
 It allows for the creation of dynamic web pages, enabling the presentation of data from the backend to the frontend.
 
+## JPA (Java Persistence API)
+ProgressTrackr utilizes JPA, which is a standard specification for accessing, persisting, and managing data between Java objects and a relational database.
+With JPA, developers can use object-oriented approaches to interact with the database, making it easier to perform CRUD operations and handle data persistence.
